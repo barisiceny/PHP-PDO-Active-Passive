@@ -1,6 +1,6 @@
 ﻿<?php
 $host = '127.0.0.1';
-$dbname = 'activepassive';  // We wrote the name of our database
+$dbname = 'activepassive';  // Veritabanımızın adını yazdık
 $username = 'root'; 
 $password = '';
 $charset = 'utf8';
