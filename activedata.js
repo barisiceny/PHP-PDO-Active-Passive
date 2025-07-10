@@ -1,17 +1,17 @@
 $(document).ready(function () {
     $('.ActivePassive').click(function (event) {
-        var id = $(this).attr("id");  //we get the id value
+        var id = $(this).attr("id");  //id değerini alıyoruz
 
         var status = ($(this).is(':checked')) ? '1' : '0';
-        //According to the checkbox, we get the information whether it is active or passive.
+        //Onay kutusuna göre, aktif mi yoksa pasif mi olduğu bilgisini alırız.
 
         $.ajax({
             type: 'POST',
-            url: 'activepassive.php',  //We indicate the page we are processing
-            data: {id: id, status: status}, //We send our data
+            url: 'activepassive.php',  //İşlediğimiz sayfayı belirtiriz
+            data: {id: id, status: status}, //Verilerimizi gönderiyoruz
             success: function (result) {
                 $('#result').text(result);
-                //We show the result in h2 tag
+                //Sonucu h2 etiketinde gösteriyoruz
             },
             error: function () {
                 alert('Error');
