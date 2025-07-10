@@ -1,8 +1,8 @@
 <?php
-if ($_POST) { //We check if there is a post
-    include("fonc.php"); //connecting to database
+if ($_POST) { //Bir gönderi olup olmadığını kontrol ediyoruz
+    include("fonc.php"); //Veritabanına bağlanma
 
-    //we take variables as integers
+    //Değişkenleri tamsayılar olarak alıyoruz
     $id = (int)$_POST['id'];
     $status = (int)$_POST['status'];
 
@@ -10,9 +10,9 @@ if ($_POST) { //We check if there is a post
     $line = array('id' => $id,
         'status' => $status,
     );
-    // We write our data update query.
+    // Veri güncelleme sorgumuzu yazıyoruz.
     $sql = "UPDATE products SET active=:status WHERE id=:id;";
     $status = $connect->prepare($sql)->execute($line);    
-    echo $id . " Numbered Data Changed";
+    echo $id . " Numaralı Veriler Değiştirildi";
 }
 ?>
